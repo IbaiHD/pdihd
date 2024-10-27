@@ -1,0 +1,236 @@
+@keyframes desplegar_menu_redondo {
+	from{width:0%;margin-top:10%;margin-left:5%;}
+	to{width:20%;margin-top:0%;margin-left:0%;}
+}
+
+
+@keyframes icono_seleccionado {
+  from {border:0px;}
+  to {border:10px;}
+}
+
+@keyframes fill_progress_bar {
+  from {width:0;}
+  to {width:100%;}
+}
+
+@keyframes now_entering {
+	0% {margin-left:100%;opacity:0;}
+	5% {margin-left:80%;opacity:0;font-size:14px;}
+	10% {margin-left:25%;opacity:1;font-size:16px;}
+	20% {margin-left:25%;opacity:1;font-size:16px;}
+	25% {margin-left:-10%;opacity:0;font-size:14px;}
+	100% {margin-left:-10%;opacity:0;font-size:14px;}
+}
+
+@keyframes paradas_metro{
+	0% {margin-top:95%;}
+	1% {margin-top:2.5%;}
+	25% {margin-top:2.5%;}
+	26% {margin-top:-31.25%;}
+	50% {margin-top:-31.25%;}
+	51% {margin-top:-62.5%;}
+	75% {margin-top:-62.5%;}
+	76% {margin-top:-95%;}
+	100% {margin-top:-95%;}
+}
+
+@media (min-width:320px) and (max-width:767px){
+}
+
+@media (min-width:768px) and (max-width:1279px){
+}
+
+@media (min-width:1280px){
+
+body{
+	background-image:url("imagenes/index_background_night.gif");
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;
+}
+
+#header{
+	height:10%;
+}
+
+		#metrobilbao{
+			display:flex;
+			flex-direction:column;
+			height:100%;
+			width:30%;
+			margin:auto;
+			background-image:url("imagenes/b.png"); 
+			background-position:center;
+			background-size:cover;
+			background-size:120%;
+			
+		}
+		
+		#progressbarcontainer{
+			position:relative;
+			height:100%;
+			width:90%;
+			border:0px #d8f1f1 solid;
+			border-radius:10px;
+			background-color:white;
+			opacity:1;
+			margin:auto;
+			margin-top:3%;
+		}
+		
+		#progressbar{
+			position:absolute;
+			height:100%;
+			width:90%;
+			border-radius:10px;
+			background-color:#74eeee;
+			animation: fill_progress_bar linear 20s infinite;
+		}
+			
+		#nowentering{
+			width:50%;
+			height:10%;
+			margin:auto;
+			margin-top:2%;
+			color:white;
+			text-align:center;
+			font-family:Lucida Console;
+			font-style: italic;
+			animation: now_entering linear 20s infinite;
+		}
+		
+		#paradasmetro {
+			height:560%;
+			width:35%;
+			overflow:hidden;
+			margin:auto;
+			padding:auto;
+			text-align:center;
+		}
+
+		#paradasmetro > div > div{
+			color:#fff;
+			height:100%;
+			margin:5%;
+			display:inline-block;
+			font-family:Lucida Console;
+			font-size:24px;
+			font-weight:650;
+			text-shadow: 0 0 1px #1f6868;
+		}
+		
+		#paradasmetro > div:first-child{
+			animation: paradas_metro 80s infinite;	
+		}
+
+
+
+
+#main{
+	height:80%;
+}
+
+#menu{
+	height:100%;
+	width:20%;
+	float:left;
+}
+
+#roundmenu{
+	width:100%;
+	height:20%;
+	display:block;
+}
+
+#clickround{
+	float:left;
+	position:relative;
+	margin:10%;
+	margin-top:29%;
+	margin-left:2.5%;
+	width:45%;
+	cursor:pointer;
+	z-index:5;
+}
+
+#menudesplegable{
+	position:absolute;
+	display:none;
+	width:20%;
+	height:10%;
+	z-index:4;
+}
+
+#menudesplegable > img:nth-child(1){
+	position:relative;
+	float:left;
+	width:25%;
+	margin-top:9.5%;
+	margin-left:7.5%;
+	cursor:pointer;	
+}
+
+#menudesplegable > img:nth-child(2){
+	position:relative;
+	float:left;
+	width:25%;
+	margin-top:17%;
+	margin-left:1%;
+	cursor:pointer;	
+}
+
+#menudesplegable > img:nth-child(3){
+	position:relative;
+	float:left;
+	width:25%;
+	margin-top:5%;
+	margin-left:40%;
+	cursor:pointer;	
+}
+
+#roundmenu:hover #menudesplegable{
+	display:block;
+	animation-name:desplegar_menu_redondo;
+	animation-duration:0.5s;
+}
+
+.brighter{
+	filter: brightness(1);
+	transition:filter 0.3s;
+}
+
+.brighter:hover{
+	filter: brightness(1.2);
+}
+
+
+
+#rectanglemenu{
+	height:70%;
+	width:auto;
+}
+
+#rectanglemenu img{
+	width:60%;
+	margin:3%;
+	margin-left:-5%;
+}
+
+#contenido{
+	height:90%;
+	width:80%;
+	margin-left:-10%;
+	margin-top:2.5%;
+	background-color:yellow;
+	float:left;
+	opacity:0.3;
+}
+
+#footer{
+	height:10%;
+	background-color:black;
+	opacity:0.3;
+}
+
+}
