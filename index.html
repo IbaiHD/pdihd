@@ -22,26 +22,32 @@
 
 <div id=main>
 	<div id=menu>
-		<div id=roundmenu>
-			<img id=clickround class=brighter src="imagenes/menu_redondo_a.png" alt="Menú radial"/>
+		<div id=roundmenu onclick="showbackground()">
+			<img id=clickround onclick="show_round_menu()" class=brighter src="imagenes/round_menu_night.png" alt="Menú radial"/>
 			<div id=menudesplegable>
-				<img id=smallround1 class=brighter src="imagenes/menu_redondo_a.png" alt="Menú radial pequeño"/>
-				<img id=smallround2 class=brighter src="imagenes/menu_redondo_a.png" alt="Menú radial pequeño"/>
-				<img id=smallround3 class=brighter src="imagenes/menu_redondo_a.png" alt="Menú radial pequeño"/>
+				<img id=smallround1 class=brighter src="imagenes/round_menu_night.png" alt="Menú radial pequeño"/>
+				<img id=smallround2 class=brighter src="imagenes/round_menu_night.png" alt="Menú radial pequeño"/>
+				<img id=smallround3 class=brighter  onclick= "day_night()" src="imagenes/round_menu_dn_night.png" alt="Menú radial pequeño"/>
 			</div>
 		</div>
 		<div id=rectanglemenu>
-			<img class=brighter src="imagenes/menu_rectangulo_a.png" alt="Menu rectangular"/>
-			<img class=brighter src="imagenes/menu_rectangulo_a.png" alt="Menu rectangular"/>
-			<img class=brighter src="imagenes/menu_rectangulo_a.png" alt="Menu rectangular"/>
+			<button id=button1 class=brighter onclick="showpage1()">Horarios</button>
+			<button id=button2 class=brighter onclick="showpage2()">Precios y Bonos</button>
+			<button id=button3 class=brighter onclick="showpage3()">Mapa del metro</button>
 		</div>
 	</div>
-	<div id=contenido></div>
+	<div id=content>
+		<div id=page1 class=page> hola</div>
+		<div id=page2 class=page>uwu</div>
+		<div id=page3 class=page>adios</div>		
+	</div>
 </div>
 
 <div id=footer>
 	<div id=iconfooter></div>
 </div>
 
+
+<script src="javascript.js"></script>
 </body>
 </html>
