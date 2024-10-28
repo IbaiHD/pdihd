@@ -24,16 +24,6 @@ function showpage3(){
 	document.getElementById("page2").style.display = "none";
 	document.getElementById("page3").style.display = "block";
 }
-
-/*function show_round_menu(){
-	if(dp==0){
-		document.getElementById("menudesplegable").style.display = "block");
-		dp=1;
-	}else{
-		document.getElementById("menudesplegable").style.display = "none");
-		dp=0;
-	}
-}*/
 		
 
 function day_night(){
@@ -41,8 +31,8 @@ function day_night(){
 	if (nightmode == 1){
 		document.body.style.backgroundImage = "url('imagenes/index_background_day.gif')";
 		document.getElementById("clickround").src = "imagenes/round_menu_day.png";
-		document.getElementById("smallround1").src = "imagenes/round_menu_day.png";
-		document.getElementById("smallround2").src = "imagenes/round_menu_day.png";
+		document.getElementById("smallround1").src = "imagenes/round_menu_form_day.png";
+		document.getElementById("smallround2").src = "imagenes/round_menu_music_day.png";
 		document.getElementById("smallround3").src = "imagenes/round_menu_dn_day.png";
 		document.getElementById("button1").style.backgroundImage = "url('imagenes/rectangle_menu_day.png')";
 		document.getElementById("button2").style.backgroundImage = "url('imagenes/rectangle_menu_day.png')";
@@ -58,8 +48,8 @@ function day_night(){
 	}else{
 		document.body.style.backgroundImage = "url('imagenes/index_background_night.gif')";
 		document.getElementById("clickround").src = "imagenes/round_menu_night.png";
-		document.getElementById("smallround1").src = "imagenes/round_menu_night.png";
-		document.getElementById("smallround2").src = "imagenes/round_menu_night.png";
+		document.getElementById("smallround1").src = "imagenes/round_menu_form_night.png";
+		document.getElementById("smallround2").src = "imagenes/round_menu_music_night.png";
 		document.getElementById("smallround3").src = "imagenes/round_menu_dn_night.png";
 		document.getElementById("button1").style.backgroundImage = "url('imagenes/rectangle_menu_night.png')";
 		document.getElementById("button2").style.backgroundImage = "url('imagenes/rectangle_menu_night.png')";
