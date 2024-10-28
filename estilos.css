@@ -58,6 +58,23 @@ body{
 #header{
 	height:10%;
 }
+		
+		#webtitle{
+			display:block;
+			position:absolute;
+			margin-top:1.25%;
+			margin-left:5%;
+			float:left;
+			width:10%;
+			color:white;
+			text-align:center;
+			font-family:Lucida Console;
+			font-weight:600;
+		}
+		
+		#logotitle{
+			width:100px;
+		}
 
 		#metrobilbao{
 			display:flex;
