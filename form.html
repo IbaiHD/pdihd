@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="estilos.css">
+<title>Inicio</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<div id=header>
+	<audio id="audio"> 
+	<source src="musica/cancion.mp3" type="audio/mpeg"></audio>
+	<div id=metrobilbao>
+		<div id=progressbarcontainer>
+			<div id=progressbar></div>
+		</div>
+		<div id=nowentering>Now entering</div>
+		<div id=paradasmetro>
+			<div><div>Gobela</div></div>
+			<div><div>Areeta</div></div>
+			<div><div>Lamiako</div></div>
+			<div><div>Leioa</div></div>			
+		</div>
+	</div>
+
+</div>
+
+<div id=main>
+	<div id=menu>
+		<div id=roundmenu onclick="showbackground()">
+			<img id=clickround class="brighter btn" src="imagenes/round_menu_night.png" alt="Menú radial"/>
+			<div id=menudesplegable>
+				<img id=smallround1 class="brighter btn" src="imagenes/round_menu_form_night.png" alt="Menú radial pequeño"/>
+				<img id=smallround2 class="brighter btn" onclick= "music()" src="imagenes/round_menu_music_night.png" alt="Menú radial pequeño"> 
+				<img id=smallround3 class="brighter btn" onclick= "day_night()" src="imagenes/round_menu_dn_night.png" alt="Menú radial pequeño"/>
+			</div>
+		</div>
+		<div id=rectanglemenu>
+			<button id=button1 class=brighter onclick="showpage1()">Horarios</button>
+			<button id=button2 class=brighter onclick="showpage2()">Precios y Bonos</button>
+			<button id=button3 class=brighter onclick="showpage3()">Mapa del metro</button>
+		</div>
+	</div>
+	<div id=content>
+		
+	</div>
+</div>
+
+<div id=footer>
+	<div id=footercontent>
+		<div id=iconfooter></div>
+	</div>
+</div>
+
+
+<script src="javascript.js"></script>
+</body>
+</html>

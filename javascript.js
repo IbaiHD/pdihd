@@ -1,4 +1,5 @@
 var nightmode = 1;
+var playing= 0;
 var dp = 0;
 
 function showbackground(){
@@ -23,6 +24,16 @@ function showpage3(){
 	document.getElementById("page1").style.display = "none";
 	document.getElementById("page2").style.display = "none";
 	document.getElementById("page3").style.display = "block";
+}
+
+function music(){
+	if(playing==0){
+	document.getElementById("audio").play();
+	playing=1;
+	}else{
+		document.getElementById("audio").pause();
+		playing=0;
+	}
 }
 		
 
