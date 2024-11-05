@@ -14,38 +14,46 @@
 			<div id=progressbar></div>
 		</div>
 		<div id=nowentering>Now entering</div>
-		<div id=paradasmetro>		
+		<div id=paradasmetro>
+			<div><div>Gobela</div></div>
+			<div><div>Areeta</div></div>
+			<div><div>Lamiako</div></div>
+			<div><div>Leioa</div></div>			
 		</div>
 	</div>
 
 </div>
 
-	<nav id=menu>
-		<img id=icon_menu src="imagenes/menu_icon.png"/>	
-		<div id=menu_desplegable>
-			<a href="form.html"><button id=form_button class=menu_button alt="boton_formulario">Formulario</button></a>
-			<button id=music_button  class=menu_button onclick= "music()" alt="boton_musica"> Música</button>
-			<button id=dn_button class=menu_button onclick= "day_night()" alt="boton_dn">Modo noche </button>
-			<hr/>
-			<button id=button1 class=menu_button onclick="showpage1()">Horarios</button>
-			<button id=button2 class=menu_button onclick="showpage2()">Precios y Bonos</button>
-			<button id=button3 class=menu_button onclick="showpage3()">Mapa del metro</button>
+<div id=main>
+	<div id=menu>
+		<div id=roundmenu>
+			<img id=clickround class="brighter btn" src="imagenes/round_menu_night.png" alt="Menú radial"/>
+			<div id=menudesplegable>
+				<img id=smallround1 class="brighter btn" src="imagenes/round_menu_form_night.png" alt="Menú radial pequeño"/>
+				<img id=smallround2 class="brighter btn" onclick= "music()" src="imagenes/round_menu_music_night.png" alt="Menú radial pequeño"> 
+				<img id=smallround3 class="brighter btn" onclick= "day_night()" src="imagenes/round_menu_dn_night.png" alt="Menú radial pequeño"/>
+			</div>
 		</div>
-	</nav>
-	<section id=content>
+		<div id=rectanglemenu>
+			<button id=button1 class=brighter onclick="showpage1()">Horarios</button>
+			<button id=button2 class=brighter onclick="showpage2()">Precios y Bonos</button>
+			<button id=button3 class=brighter onclick="showpage3()">Mapa del metro</button>
+		</div>
+	</div>
+	<div id=content>
 		<div id=page1 class=page> 
 		
 		<table>
 			<tr>
 				<th class=captioncel rowspan=2>Frecuencia <br> de horarios</th>
-				<td class=evenrow colspan=2>Mañana</td>
-				<td class=evenrow colspan=2>Tarde</td>
+				<td class=evenrow colspan=2>Diurno</td>
+				<td class=evenrow colspan=2>Nocturno</td>
 			</tr>
 			<tr>
 
-				<td>Diario</td>
+				<td>Laborable</td>
 				<td>Festivo</td>
-				<td>Diario</td>
+				<td>Laborable</td>
 				<td>Festivo</td>
 			</tr>	
 			<tr>
@@ -83,16 +91,13 @@
 		<div id=page2 class=page>uwu</div>
 		<div id=page3 class=page>adios</div>		
 	</div>
-</section>
+</div>
 
-<footer id=footer>
-		<div id=footer_text> Copyright © 2024. All Rights Reserved.<br><span>Comparte a través de:</span></div>
-		<div id=footer_media> 
-			<a href="" title="facebook"><img id="icon_facebook" src="imagenes/form/icon_facebook.png"></a>
-			<a href="" title="twitter"><img id="icon_twitter" src="imagenes/form/icon_twitter.png" ></a>
-			<a href="" title="mail"><img id="icon_mail" src="imagenes/form/icon_mail.png" ></a>
-		</div>
-</footer>
+<div id=footer>
+	<div id=footercontent>
+		<div id=iconfooter></div>
+	</div>
+</div>
 
 
 <script src="javascript.js"></script>
