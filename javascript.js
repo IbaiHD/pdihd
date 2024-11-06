@@ -1,17 +1,32 @@
 var nightmode = 1;
 var playing= 0;
 const paradas= ["Plentzia","Larrabasterra","Algorta","Areeta","Astrabudua","San Inazio","Santimami","Abando","Zazpikalea","Etxebarri","Basauri"];
-let parada=0;
+var parada=0;
+var numberid=1;
 
 function change_parada(){
 	
 	document.getElementById("paradasmetro").innerText=paradas[parada];
 	parada = (parada + 1) % paradas.length;
-	setTimeout(change_parada, 3000);
+	setTimeout(change_parada, 20010);
 }
 
-change_parada();
+function change_parada_icon(){
+		var id= "parada" + numberid;
+		document.getElementById(id).style.animation = "parada_actual 20s";
+		numberid++;
+	
+}		
 
+function parada_actual(){
+	
+	change_parada_icon();
+	setTimeout(parada_actual,20000);
+
+}
+
+parada_actual();
+change_parada();
 
 function showbackground(){
 	document.getElementById("page1").style.display = "none";
@@ -20,23 +35,31 @@ function showbackground(){
 }
 
 function showpage1(){
-	document.getElementById("page1").style.display = "block";
+	document.getElementById("page1").style.display = "flex";
 	document.getElementById("page2").style.display = "none";
 	document.getElementById("page3").style.display = "none";
 	document.getElementById("page1").style.animation="show_page 1s";
 }
 
 function showpage2(){
-	document.getElementById("page1").style.display = "none";
-	document.getElementById("page2").style.display = "block";
-	document.getElementById("page3").style.display = "none";
-	document.getElementById("page2").style.animation="show_page 1s";	
+	
+	if (window.innerWidth >= 1280){
+		document.getElementById("page1").style.display = "none";
+		document.getElementById("page2").style.display = "flex";
+		document.getElementById("page3").style.display = "none";
+		document.getElementById("page2").style.animation="show_page 1s";	
+	}else{
+		document.getElementById("page1").style.display = "none";
+		document.getElementById("page2").style.display = "block";
+		document.getElementById("page3").style.display = "none";
+		document.getElementById("page2").style.animation="show_page 1s";
+	}
 }
 
 function showpage3(){
 	document.getElementById("page1").style.display = "none";
 	document.getElementById("page2").style.display = "none";
-	document.getElementById("page3").style.display = "block";
+	document.getElementById("page3").style.display = "flex";
 	document.getElementById("page3").style.animation="show_page 1s";	
 }
 
@@ -50,7 +73,6 @@ function music(){
 	}
 }
 		
-
 function day_night(){
 	
 	if (nightmode == 1){

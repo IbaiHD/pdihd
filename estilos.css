@@ -12,18 +12,6 @@
 	100% {margin-left:-10%;opacity:0;font-size:14px;}
 }
 
-@keyframes paradas_metro{
-	0% {margin-top:-100px;}
-	1% {margin-top:10px;}
-	25% {margin-top:10px;}
-	26% {margin-top:-110px;}
-	50% {margin-top:-110px;}
-	51% {margin-top:-230px;}
-	75% {margin-top:-230px;}
-	76% {margin-top:-350px;}
-	100% {margin-top:-350px;}
-}
-
 @keyframes show_page {
   from {
     clip-path: inset(0 100% 0 0);
@@ -48,15 +36,35 @@
   }
 }
 
-
-@keyframes show_menu {
-  from {
-   height:130px;
-  }
-  to {
-   height:80%;
-  }
-}
+@keyframes parada_actual{
+	0%{
+		background-color:white;
+	}
+	10%{
+		background-color:#74eeee;
+		transform:scale(1.05);
+		box-shadow: 0 2px 2px rgba(0,0,0,0.35);
+		filter: brightness(1);
+	}
+	
+	11%{
+		filter: brightness(2);
+	}
+	
+	13%{
+		filter: brightness(1);
+	}
+	
+	90%{
+		background-color:#74eeee;
+		transform:scale(1.05);
+	}
+	
+	100%{
+		background-color:white;
+	}
+}	
+	
 
 body{
 	background-image:url("imagenes/index_background_night.gif");
@@ -65,6 +73,7 @@ body{
 	background-size:cover;
 	margin-left:0;
 	margin-bottom:0;
+	font-family: monaco,Consolas,Lucida Console,monospace;
 }
 
 #header{
@@ -76,8 +85,10 @@ body{
 			margin:auto;
 			margin-top:-30px;
 			padding-top:30px;
-			border-radius:10px;
-			background:blue;
+			border-bottom-left-radius: 150px;
+			border-bottom-right-radius: 150px;
+			border:1px solid white;
+			background: linear-gradient(180deg, rgba(167,118,168,.5) 0%, rgba(125,87,130,.5) 100%);
 			background-position:center;
 			background-size:cover;
 			background-size:120%;
@@ -117,28 +128,42 @@ body{
 			animation: now_entering linear 20s infinite;
 		}
 		
-		#paradasmetro {
-			height:50%;
-			width:35%;
-			overflow:hidden;
+		#parada_actual{
+			display:flex;
 			margin:auto;
-			text-align:center;
-		}
+			width:80%;
+			height:22px;
+			background: radial-gradient(circle, rgba(102,102,102,1) 0%, rgba(255,255,255,0) 100%);
+			align-items:center;
 
-		#paradasmetro > div > div{
-			color:#fff;
-			height:100px;
-			margin:10px;
-			display:inline-block;
-			font-family:Lucida Console;
-			font-size:24px;
-			font-weight:1000;
-			text-shadow: 0 0 2px #1f6868;
 		}
 		
-		#paradasmetro > div:first-child{
-			animation: paradas_metro 80s infinite;	
+		
+		.parada{
+			float:left;
+			width:10px;
+			height:10px;
+			border-radius:50%;
+			border:2px solid white;
+			margin:auto;
+			background-color:white;
+			transition:background-color:.25s;
 		}
+			
+		
+		#paradasmetro {
+			height:30x;
+			width:50%;
+			margin:auto;
+			text-align:center;
+			color:white;
+			font-size:24px;
+			margin-top:10px;
+			background: radial-gradient(circle, rgba(91,44,74,0.6) 0%, rgba(255,255,255,0) 100%);
+			
+		}
+
+
 		
 	.menu_button{
 		margin-top:7.5%;
@@ -160,7 +185,7 @@ body{
 	
 	.menu_button:hover{
 		padding:-1px;
-		box-shadow: 0 4px 4px rgba(0,0,0,0.35);;
+		box-shadow: 0 4px 4px rgba(0,0,0,0.35);
 		transform: scale(1.05);
 		color:transparent;
 	}
@@ -187,15 +212,15 @@ body{
 	}
 
 	#menu_desplegable button:nth-child(5):hover{
-		background-image: url('imagenes/round_menu_form_night.png');
+		color:white;
 	}
 	
 	#menu_desplegable button:nth-child(6):hover{
-		background-image: url('imagenes/round_menu_form_night.png');
+		color:white;
 	}
 
 	#menu_desplegable button:nth-child(7):hover{
-		background-image: url('imagenes/round_menu_form_night.png');
+		color:white;
 	}	
 	
 	#menu_desplegable hr{
@@ -215,11 +240,10 @@ body{
 	
 	#page1, #page2, #page3{
 		display:none;
+		
 	}
 	
-	#page1{
-		display:flex;	
-		background:black;
+	#page2{
 	}
 	
 	.page{
@@ -234,6 +258,9 @@ body{
 	min-height:100px;
 	width:80%;
 	margin:auto;
+	background: radial-gradient(circle, rgba(0,0,0,0.5270483193277311) 0%, rgba(107,107,107,0.48503151260504207) 45%, rgba(255,255,255,0) 100%);
+	color:white;
+	text-shadow:text-shadow: 1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black;
 }
 
 #footercontent{
@@ -249,6 +276,7 @@ body{
 	text-align:right;
 	display:block;
 	margin-left:10%;
+	margin-top:20px;
 	width:40%;
 	height:80%;
 }
@@ -277,40 +305,120 @@ body{
 
 
 	table{
-		width:90%;
+		width:100%;
 		margin:auto;
-		padding:0.25em;
-		border-radius:
+		border: 3px dotted black;
+		border-collapse:collapse;
 		margin-top:4em;
 		text-align:center;
-		color:#fff;
-		font-family:Lucida Console;
-		font-size:1.2em;
-		font-weight:700;
-		text-shadow: 0 0 2px black;
-
+		font-size:20px;
+		font-weight:550;
+		background-color: rgba(74,84,87,.85);
+		color:white;
 	}
 
 	
 	th, td{
 		vertical-align: center;
 		height:3em;
-		background-color:77c2ca;
 	}
 	
 	th{
-		font-weight:10600;
+		
 	}
 	
 	.evenrow{
-		color:#fde6ff;
-		background-color:b77cd7;
+		background-color: rgba(74,84,87,.85);
+		
 	}
 	
 	.captioncel{
-		background-color: b39eff;
-		border:1px solid white;
-
+		background-color:transparent;
+		background-image:url("imagenes/list_title_night.png");
+		background-position:center;
+		background-size:70%;
+		background-repeat:no-repeat;
+		text-shadow: 1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black;
+		font-weight:550;
+	}
+	
+	#lista_precios{
+		display:flex;
+		width:50%;
+		height:100%;
+	}
+	
+	#video_precios{
+		width:20%;
+		min-width:320px;
+		min-height:240px;
+		margin:auto;
+		padding: 30px;
+		border:3px dotted black;
+		background-color: rgba(74,84,87,.85);
+		text-align:center;
+	}
+	
+	#texto_video{
+		color:white;
+		text-align:center;
+		font-size:16px;
+		font-weight:550;
+		text-shadow: 1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black;
+	}
+	
+	#media_video{
+		margin:auto;
+		display:flex;
+		min-height:240px;
+		border-radius:10px;
+		overflow:hidden;
+		
+	}
+	
+	video{
+		max-width: 100%;
+		height:auto;
+		
+		
+	}
+	
+	.title_list{
+		width:100%;
+		height:100px;
+		margin:auto;
+		display:flex;
+		background-image:url("imagenes/list_title_night.png");
+		background-size:30%;
+		background-position:center;
+		background-repeat:no-repeat;
+	}
+	
+	h6{
+		display:inline;
+		margin:auto;
+		text-shadow: 1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black;
+		font-size:16px;
+		font-weight:550;
+	}
+	
+	ul{
+		margin:auto;
+		padding:10%;
+		padding-top:5%;
+		padding-left:6%;
+		border:3px dotted black;
+		background-color: rgba(74,84,87,.85);
+	}
+	
+	ol{	
+		list-style-image:url("imagenes/list_arrow_night.png");	
+		color:white;
+		font-size:18px;	
+	}
+	
+	li{
+		background: radial-gradient(circle, rgba(91,44,74,0.6) 0%, rgba(255,255,255,0) 100%);
 	}
 	
 
@@ -385,7 +493,8 @@ body{
 
 #paradasmetro {
 	height:30%;
-	width:35%;
+	width:65%;
+	padding:5px;
 	overflow:hidden;
 	margin:auto;
 	text-align:center;
@@ -407,6 +516,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+	transition: all 700ms;
 }
 
 #icon_menu{
@@ -428,11 +538,16 @@ body{
     scrollbar-width: none; 
 }
 
+	#menu{
+		z-index:10;
+		position:absolute;
+
+	}
 	
 	#menu_desplegable{
-    display: none;
-    align-items: center; 
-    justify-content: center;
+		display: none;
+		align-items: center; 
+		justify-content: center;
 	}
 		
 	
@@ -445,13 +560,51 @@ body{
 	}
 	
 	#menu:hover{
-	animation: show_menu .75s forwards;
+		height:80%;
 	}
 	
 	#menu:hover > #menu_desplegable button{
 		animation: visible .75s forwards;	
 	
 	}
+	
+	#content{
+		width:90%;
+		margin:auto;
+		overflor:auto;
+		z-index:5;
+	}
+
+	td,th{
+		height:70px;
+	}
+	
+	#lista_precios{
+		margin-top:20px;
+		width:100%;
+		height:auto;
+	}
+	
+	#video_precios{
+		width:320px;
+		height:30%;
+		min-height:240px;
+		margin:auto;
+		margin-top:20px;
+		padding:5%;
+		border:3px dotted black;
+		background-color: rgba(74,84,87,.85);
+	}
+	
+	#media_video{
+		width:320px;
+		height:auto;
+	}
+	
+	video{
+		width:100%;
+		height:auto;
+	}	
 
 }	
 		
@@ -475,7 +628,7 @@ body{
 	height:115px;
 	width:21em;
 	margin:auto;
-	margin-top:-40px;
+	margin-top:-30px;
 	padding-top:20px;
 	border:2px solid #94d2d6;
 	border-radius:15px;
@@ -511,7 +664,76 @@ body{
 		border-radius:5px;
 		border:0;
 		color:white;
-	}	
+	}
+
+#content{
+width:100%;
+margin:0;
+margin-left:5px;
+overflor:auto;
+}
+
+table{
+		font-size:12px;
+}
+
+th,td{
+	height:60px;
+}
+
+	#lista_precios{
+		margin-top:20px;
+		width:100%;
+		height:auto;
+	}
+	
+	#video_precios{
+		width:320px;
+		height:30%;
+		min-height:240px;
+		margin:auto;
+		margin-top:20px;
+		padding:5%;
+		border:3px dotted black;
+		background-color: rgba(74,84,87,.85);
+	}
+	
+	#media_video{
+		width:320px;
+		height:auto;
+	}
+	
+	video{
+		width:100%;
+		height:auto;
+	}
+	
+#footer{
+	text-align:center;
+}	
+
+#footercontent{
+		height:100%;
+		width:100%;
+		margin:auto;
+		padding:1%;
+	}
+
+#footer_text{
+	display:none;
+}
+
+#footer_media{
+	width:100%;
+	height:80%;
+}
+
+#footer_media a img{
+	max-height:100%;
+	max-width:30%;
+
+}
+
 	
 }
 
