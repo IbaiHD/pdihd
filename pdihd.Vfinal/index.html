@@ -1,0 +1,147 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="estilos.css">
+<title>Inicio</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+	<header id=header>
+		<audio id="audio"> 
+			<source src="musica/cancion.mp3" type="audio/mpeg">
+		</audio>
+		<div id=metrobilbao>
+			<div id=progressbarcontainer>
+				<div id=progressbar></div>
+			</div>
+				<div id=parada_actual>
+					<div id=parada1 class=parada></div>
+					<div id=parada2 class=parada></div>
+					<div id=parada3 class=parada></div>
+					<div id=parada4 class=parada></div>
+					<div id=parada5 class=parada></div>
+					<div id=parada6 class=parada></div>
+					<div id=parada7 class=parada></div>
+					<div id=parada8 class=parada></div>
+					<div id=parada9 class=parada></div>
+					<div id=parada10 class=parada></div>
+					<div id=parada11 class=parada></div>
+					<div id=parada12 class=parada></div>
+				</div>		
+			<div id=nowentering>Now entering</div>
+			<div id=paradasmetro>		
+			</div>
+		</div>
+
+	</header>
+
+	<nav id=menu>
+		<img id=icon_menu src="imagenes/menu_icon.png"/>	
+		<div id=menu_desplegable>
+			<a href="form.html"><button id=form_button class=menu_button alt="boton_formulario">Formulario</button></a>
+			<button id=music_button  class=menu_button onclick= "music()" alt="boton_musica"> Música</button>
+			<button id=dn_button class=menu_button onclick= "day_night()" alt="boton_dn">Modo noche </button>
+			<hr/>
+			<button id=button1 class=menu_button onclick="showpage1()">Horarios</button>
+			<button id=button2 class=menu_button onclick="showpage2()">Precios y Bonos</button>
+			<button id=button3 class=menu_button onclick="showpage3()">Mapa del metro</button>
+		</div>
+	</nav>
+	<section id=content>
+		<article id=page1 class=page> 
+		
+			<table>
+				<tr>
+					<th class=captioncel rowspan=2>Frecuencia <br> de horarios</th>
+					<td colspan=2>Mañana</td>
+					<td colspan=2>Tarde</td>
+				</tr>
+				<tr class=evenrow>
+
+					<td>Diario</td>
+					<td>Festivo</td>
+					<td>Diario</td>
+					<td>Festivo</td>
+				</tr>	
+				<tr>
+					<th>Línea 1</th>
+					<td>10'</td>
+					<td>12'</td>
+					<td>20'</td>
+					<td>30'</td>
+				</tr>
+				<tr class=evenrow>
+					<th>Línea 2</th>
+					<td>10'</td>
+					<td>12'</td>
+					<td>20'</td>
+					<td>30'</td>				
+				</tr>
+				<tr>
+					<th>Línea 3</th>
+					<td>15'</td>
+					<td>20'</td>
+					<td>30'</td>
+					<td>--</td>				
+				</tr>				
+				<tr class=evenrow>
+					<th>Línea 4</th>
+					<td>10'</td>
+					<td>12'</td>
+					<td>--</td>
+					<td>--</td>				
+				</tr>
+			</table>
+
+		
+		</article>
+		<article id=page2 class=page>
+			<div id=lista_precios>
+				<ul>
+					<ol>
+						<div class=title_list><h6>Empadronados Bizkaia</h6></div>
+						<li> 1 Zona............240€/Anual</li>
+						<li> 2 Zona............288€/Anual</li>
+						<li> 3 Zona............306€/Anual</li>
+					</ol>
+					
+					<ol>
+						<div class=title_list><h6>No empadronados</h6></div>					
+						<li> 1 Zona............408€/Anual</li>
+						<li> 2 Zona............449€/Anual</li>
+						<li> 3 Zona............516€/Anual</li>					
+					</ol>
+				</ul>
+			</div>
+			<div id=video_precios>
+			<div id=texto_video>Videotutorial empadronamiento:</div>
+			<hr/>
+			<div id=media_video>
+				<video controls>
+					<source src="musica/rickroll.mp4"/>
+				</video>
+			</div>
+			</div>
+		
+		</article>
+		<article id=page3 class=page>
+			<canvas id=mapa_metro width="500" height="1000">
+			¡Aquí debería de ir un canvas, si ves este mensaje, cambia de navegador!
+			</canvas>
+		</article>		
+	</section>
+
+<footer id=footer>
+		<div id=footer_text> Copyright © 2024. All Rights Reserved.<br><span>Comparte a través de:</span></div>
+		<div id=footer_media> 
+			<a href="https://www.facebook.com/?locale=es_ES" title="facebook"><img id="icon_facebook" src="imagenes/form/icon_facebook.png"></a>
+			<a href="https://x.com/nqfueramos" title="twitter"><img id="icon_twitter" src="imagenes/form/icon_twitter.png" ></a>
+			<a href="https://mail.google.com/mail/u/0/#inbox" title="mail"><img id="icon_mail" src="imagenes/form/icon_mail.png" ></a>
+		</div>
+</footer>
+
+
+<script src="javascript.js"></script>
+</body>
+</html>
