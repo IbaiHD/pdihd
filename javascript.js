@@ -5,24 +5,20 @@ var parada=0;
 var numberid=1;
 
 function change_parada(){
-	
 	document.getElementById("paradasmetro").innerText=paradas[parada];
 	parada = (parada + 1) % paradas.length;
 	setTimeout(change_parada, 20010);
 }
 
 function change_parada_icon(){
-		var id= "parada" + numberid;
-		document.getElementById(id).style.animation = "parada_actual 20s";
-		numberid++;
-	
+	var id= "parada" + numberid;
+	document.getElementById(id).style.animation = "parada_actual 20s";
+	numberid++;	
 }		
 
-function parada_actual(){
-	
+function parada_actual(){	
 	change_parada_icon();
 	setTimeout(parada_actual,20000);
-
 }
 
 parada_actual();
@@ -74,27 +70,35 @@ function music(){
 }
 		
 function day_night(){
+	const botones=document.getElementsByClassName("menu_button");
 	
 	if (nightmode == 1){
 		document.body.style.backgroundImage = "url('imagenes/index_background_day.gif')";
-		document.getElementByClass("menu_button").style.backgroundColor = "rgba(229,153,85,1)";
-		document.getElementById("metrobilbao").style.backgroundImage = "url('imagenes/info_panel_day.png')";
-		document.getElementById("progressbarcontainer").style.border = "border:0px #ffb324 solid";	
-		document.getElementById("progressbar").style.backgroundColor = "#ffbc16";
-		document.getElementById("page1").style.backgroundColor = "rgba(100,70,100,.5)";
-		document.getElementById("page2").style.backgroundColor = "rgba(100,70,100,.5)";
-		document.getElementById("page3").style.backgroundColor = "rgba(100,70,100,.5)";	
+		document.getElementById("metrobilbao").style.background= "linear-gradient(0deg, rgba(177,113,27,.5) 0%, rgba(255,209,127,.5) 100%)";
+		document.getElementById("menu").style.background= "linear-gradient(0deg, rgba(177,113,27,.5) 0%, rgba(255,209,127,.5) 100%)";
+		document.getElementById("menu").style.border="2px solid white";
+		document.getElementById("progressbar").style.background="#ffe000";
+		for(let i=0;i< botones.length; i++){
+			botones[i].style.backgroundColor="rgba(240,222,121,1)";
+		}
+		document.getElementsByClassName("captioncel")[0].style.backgroundImage = "url('imagenes/list_title_day.png')"; 
+		document.getElementsByClassName("title_list")[0].style.backgroundImage = "url('imagenes/list_title_day.png')"; 
+		document.getElementsByClassName("title_list")[1].style.backgroundImage = "url('imagenes/list_title_day.png')"; 
 		nightmode = 0;
 	
 	}else{
 		document.body.style.backgroundImage = "url('imagenes/index_background_night.gif')";
-		document.getElementByClass("menu_button").style.backgroundColor = "rgba(148,210,214,1)";
-		document.getElementById("metrobilbao").style.backgroundImage = "url('imagenes/info_panel_night.png')";	
-		document.getElementById("progressbarcontainer").style.border = "border:0px #d8f1f1 solid";	
-		document.getElementById("progressbar").style.backgroundColor = "#74eeee";	
-		document.getElementById("page1").style.backgroundColor = "rgba(0,0,70,.5)";
-		document.getElementById("page2").style.backgroundColor = "rgba(0,0,70,.5)";
-		document.getElementById("page3").style.backgroundColor = "rgba(0,0,70,.5)";
+		document.getElementById("metrobilbao").style.background= "linear-gradient(0deg, rgba(167,118,168,.5) 0%, rgba(125,87,130,.5) 100%)";
+		document.getElementById("menu").style.background= "linear-gradient(0deg, rgba(167,118,168,.5) 0%, rgba(125,87,130,.5) 100%)";
+		document.getElementById("menu").style.border="2px solid #94d2d6";
+		document.getElementById("progressbar").style.background="#74eeee";
+		for(let i=0;i< botones.length; i++){
+			botones[i].style.backgroundColor="rgba(148,210,214,1)";
+		}
+		document.getElementsByClassName("captioncel")[0].style.backgroundImage = "url('imagenes/list_title_night.png')"; 
+		document.getElementsByClassName("title_list")[0].style.backgroundImage = "url('imagenes/list_title_night.png')"; 
+		document.getElementsByClassName("title_list")[1].style.backgroundImage = "url('imagenes/list_title_night.png')";		
+		document.li.style.backgroundImage = "url('imagenes/list_title_day.png')"; 
 		nightmode = 1;
 	}
 }

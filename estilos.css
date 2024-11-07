@@ -41,7 +41,7 @@
 		background-color:white;
 	}
 	10%{
-		background-color:#74eeee;
+		background-color:#ec88a2;
 		transform:scale(1.05);
 		box-shadow: 0 2px 2px rgba(0,0,0,0.35);
 		filter: brightness(1);
@@ -56,15 +56,14 @@
 	}
 	
 	90%{
-		background-color:#74eeee;
+		background-color:#ec88a2;
 		transform:scale(1.05);
 	}
 	
 	100%{
 		background-color:white;
 	}
-}	
-	
+}
 
 body{
 	background-image:url("imagenes/index_background_night.gif");
@@ -242,9 +241,7 @@ body{
 		display:none;
 		
 	}
-	
-	#page2{
-	}
+
 	
 	.page{
 		border-radius:1em;
